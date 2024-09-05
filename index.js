@@ -22,6 +22,9 @@ app.post('/cadastro', async (req, res)=>{
       const cpf = req.body.cpf;
       const admin = req.body.admin;
   */
+  /*
+     const novousuario = new usuario(req.body) 
+     */  
      const admin = req.body.admin=="on" ? true : false;
      const novousuario = new usuario({
      nome:req.body.nome,
@@ -34,10 +37,9 @@ app.post('/cadastro', async (req, res)=>{
      cpf: req.body.cpf,
      admin: admin
    })
-     /*
-     const novousuario = new usuario(req.body) 
-     */  
+     
       await novousuario.save();
+      res.send('Cadastrado com sucesso');
 })   
  
 app.listen(port);
