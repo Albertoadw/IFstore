@@ -41,5 +41,12 @@ app.post('/cadastro', async (req, res)=>{
       await novousuario.save();
       res.send('Cadastrado com sucesso');
 })   
+       app.get('/login', (req, res)=>{
+         res.render('login')
+})  
+
+     app.post('/login', (req, res)=>{
+      res.redirect('/admin/usuarios/lst')
+})  
  
 app.listen(port);
